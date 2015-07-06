@@ -8,7 +8,7 @@ Implement various vector and matrix math functions using no math libraries.
 
 ### Learning Objectives
 
-After completing this assignment, you should understand:
+After completing this assignment,  you should understand:
 
 * List comprehensions
 * Introductory linear algebra concepts
