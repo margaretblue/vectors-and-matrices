@@ -1,9 +1,33 @@
+"""Implement these linear algebra functions:
+    vector addition and subtraction
+    vector multiplication by a scalar
+    mean of multiple vectors
+    dot product
+    magnitude
+    matrix addition and subtraction
+    matrix multiplication by a scalar
+    matrix multiplication by a vector
+    matrix multiplication by a matrix"""
+
+import math
+
 class ShapeException(Exception):
     pass
 
 
-def shape_vectors():
-    pass
+def shape(vector_or_matrix):
+    """shape takes a vector or matrix and returns a tuple with the
+    number of rows (for a vector) or the number of rows and columns
+    (for a matrix.)"""
+    #if a vector, return (#rows,)
+    # C = [[1, 2],
+    #       [2, 1],
+    #       [1, 2]]
+    # should return (3,2)
+    if type(vector_or_matrix[0]) is int:
+        return ((len(vector_or_matrix)),)
+    if type(vector_or_matrix[0]) is list:
+        return ((len(vector_or_matrix),len(vector_or_matrix[0])))
 
 
 def vector_add():
@@ -81,4 +105,8 @@ def matrix_matrix_multiply():
 def matrix_matrix_multiply_checks_shapes():
     pass
 
+if __name__ == '__main__':
+    print(shape([3,4]))
+    print(type(shape([3,4])))
+    print(shape([[1,2,3],[2,3,4],[5,6,7]]))
 
