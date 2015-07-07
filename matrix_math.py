@@ -122,8 +122,8 @@ def magnitude():
     pass
 
 
-def shape_matrices():
-    pass
+def shape_matrices(vector_or_matrix):
+    return shape(vector_or_matrix)
 
 
 def matrix_row():
