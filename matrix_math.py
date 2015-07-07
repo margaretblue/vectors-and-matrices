@@ -74,12 +74,12 @@ def vector_sum(*args):
     summiest_vector = []
     # do something len(args) times
     for x in range(len(args)):
-        temporary_vector = []
-        for x in range(len(args)):
-            
+        #sum([9, -2, 19, -6, 4])
+        #summiest_vector.append()
+        #for x in range(len(args)):
         #need list of xth in each vector
-        temporary_vector =
-        summiest_vector.append(args[x] + args[x+1] )
+        #temporary_vector =
+        #summiest_vector.append(args[x] + args[x+1] )
         print(x)
     #    summiest_vector.append(args[x]+ second_vector[x] + third_vector[x])
     #return summiest_vector
@@ -106,8 +106,12 @@ def dot_checks_shapes():
     pass
 
 
-def vector_multiply():
-    pass
+def vector_multiply(a_vector, multiplier):
+    """
+    [a b]  *  Z     = [a*Z b*Z]
+    Vector * Scalar = Vector
+    """
+    return [(a_vector[x] * multiplier) for x in range(len(a_vector))]
 
 
 def vector_mean():
