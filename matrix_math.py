@@ -1,18 +1,11 @@
-"""Implement these linear algebra functions:
-    vector addition and subtraction
-    vector multiplication by a scalar
-    mean of multiple vectors
-    dot product
-    magnitude
-    matrix addition and subtraction
-    matrix multiplication by a scalar
-    matrix multiplication by a vector
-    matrix multiplication by a matrix"""
+"""Implement these linear algebra functions:"""
 
 import math
 
 class ShapeException(Exception):
     pass
+
+ShapeException("hello")
 
 
 def shape(vector_or_matrix):
@@ -66,23 +59,25 @@ def weird_sum(a_vector):
         return a_vector[0] + weird_sum(a_vector[1:])
 
 def vector_sum(*args):
-    summiest_vector = []
+    """Given any number of vector, returns sum"""
+    #return [
+    #   sum([vector[i] for vector in vectors])
+    #    for i in range(len(vectors[0]))
+    #]
+
+   # summiest_vector = []
    # summiest_vector.append(first_vector[0]+ second_vector[0] + third_vector[0])
    # summiest_vector.append(first_vector[1]+ second_vector[1] + third_vector[1])
    # summiest_vector.append(first_vector[2]+ second_vector[2] + third_vector[2])
-    index = 0
-    summiest_vector = []
+    #index = 0
     # do something len(args) times
-    for x in range(len(args)):
-        #sum([9, -2, 19, -6, 4])
-        #summiest_vector.append()
-        #for x in range(len(args)):
-        #need list of xth in each vector
-        #temporary_vector =
-        #summiest_vector.append(args[x] + args[x+1] )
-        print(x)
-    #    summiest_vector.append(args[x]+ second_vector[x] + third_vector[x])
-    #return summiest_vector
+    summiest_vector = []
+    for x in range(len(args[0])):
+        for arg in args:
+            print("i am sum(args[x]) {}".format(sum(args[x])))
+            summiest_vector.append(sum(args[x]))
+    return summiest_vector
+
 #    """vector_sum can take any number of vectors and add them together.
 #    v = [1, 3, 0]
 #    w = [0, 2, 4]
@@ -126,11 +121,16 @@ def shape_matrices(vector_or_matrix):
     return shape(vector_or_matrix)
 
 
-def matrix_row():
-    pass
+def matrix_row(a_matrix, row_index):
+    """     0 1  <- rows
+        0 [[a b]]
+        1 [[c d]]
+        ^
+      columns"""
+    return a_matrix[row_index]
 
 
-def matrix_col():
+def matrix_col(a_matrix, column_index):
     pass
 
 
