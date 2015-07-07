@@ -67,11 +67,12 @@ def test_vector_sub():
 #     vector_sub(m, v)
 #
 #
-# def test_vector_sum():
-#     """vector_sum can take any number of vectors and add them together."""
-#     assert vector_sum(v, w, u, y, z) == [12, 26, 35]
-#
-#
+def test_vector_sum():
+    """vector_sum can take any number of vectors and add them together."""
+
+    assert vector_sum(v, w, u, y, z) == [12, 26, 35]
+
+
 # @raises(ShapeException)
 # def test_vector_sum_checks_shapes():
 #     """Shape rule: the vectors must be the same size."""
