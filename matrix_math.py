@@ -5,20 +5,14 @@ import math
 class ShapeException(Exception):
     pass
 
-ShapeException("hello")
+ShapeException("Wrong shape")
 
 
 def shape(vector_or_matrix):
     """shape takes a vector or matrix and returns a tuple with the
     number of rows (for a vector) or the number of rows and columns
     (for a matrix.)"""
-    #if a vector, return (#rows,)
-    # matrixxx = [[1, 2],
-    #       [2, 1],
-    #       [1, 2]]
-    # should return (3,2)
-    # vectorrr = [3,2]
-    # should return (2,)
+    #if a vector, return
     if type(vector_or_matrix[0]) is int:
         return ((len(vector_or_matrix)),)
     if type(vector_or_matrix[0]) is list:
@@ -32,7 +26,6 @@ def vector_add(first_vector, second_vector):
     v = [1, 3, 0]
     w = [0, 2, 4]
     vector_add(v, w) == [1, 5, 4]
-    [x for x in range(10)]
     """
     return [first_vector[x] + second_vector[x] for x in range(len(first_vector))]
     #idx = 0
@@ -69,8 +62,13 @@ def vector_sum_checks_shapes():
     pass
 
 
-def test_dot():
-    pass
+def dot(a_vector, b_vector):
+    multiplied_list = [
+        (a_vector[i] * b_vector[i])
+        for i in range(len(a_vector))
+    ]
+
+    return sum(multiplied_list)
 
 
 def dot_checks_shapes():
