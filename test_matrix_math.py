@@ -116,18 +116,18 @@ def test_vector_multiply():
 #     assert is_equal(vector_mean(v, w, u)[2], 5 / 3)
 #
 #
-# def test_magnitude():
-#     """
-#     magnitude([a b])  = sqrt(a^2 + b^2)
-#
-#     magnitude(Vector) = Scalar
-#     """
-#     assert magnitude(m) == 5
-#     assert magnitude(v) == math.sqrt(10)
-#     assert magnitude(y) == math.sqrt(1400)
-#     assert magnitude(z) == 0
-#
-#
+def test_magnitude():
+    """
+    magnitude([a b])  = sqrt(a^2 + b^2)
+
+    magnitude(Vector) = Scalar
+    """
+    assert magnitude(m) == 5
+    assert magnitude(v) == math.sqrt(10)
+    assert magnitude(y) == math.sqrt(1400)
+    assert magnitude(z) == 0
+
+
 A = [[1, 0, 0],
      [0, 1, 0],
      [0, 0, 1]]
@@ -157,33 +157,33 @@ def test_shape_matrices():
     assert shape(A) == (3, 3)
     assert shape(C) == (3, 2)
     assert shape(D) == (2, 3)
-#
-#
-# def test_matrix_col():
-#     """
-#            0 1  <- rows
-#        0 [[a b]]
-#        1 [[c d]]
-#        ^
-#      columns
-#     """
-#     assert matrix_col(A, 0) == [1, 0, 0]
-#     assert matrix_col(B, 1) == [2, 5, 8]
-#     assert matrix_col(D, 2) == [3, 1]
-#
-#
-# def test_matrix_scalar_multiply():
-#     """
-#     [[a b]   *  Z   =   [[a*Z b*Z]
-#      [c d]]              [c*Z d*Z]]
-#
-#     Matrix * Scalar = Matrix
-#     """
-#     assert matrix_scalar_multiply(C, 3) == [[3, 6],
-#                                             [6, 3],
-#                                             [3, 6]]
-#
-#
+
+
+def test_matrix_col():
+    """
+           0 1  <- rows
+       0 [[a b]]
+       1 [[c d]]
+       ^
+     columns
+    """
+    assert matrix_col(A, 0) == [1, 0, 0]
+    assert matrix_col(B, 1) == [2, 5, 8]
+    assert matrix_col(D, 2) == [3, 1]
+
+
+def test_matrix_scalar_multiply():
+    """
+    [[a b]   *  Z   =   [[a*Z b*Z]
+     [c d]]              [c*Z d*Z]]
+
+    Matrix * Scalar = Matrix
+    """
+    assert matrix_scalar_multiply(C, 3) == [[3, 6],
+                                            [6, 3],
+                                            [3, 6]]
+
+
 # def test_matrix_vector_multiply():
 #     """
 #     [[a b]   *  [x   =   [a*x+b*y

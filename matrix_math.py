@@ -58,33 +58,11 @@ def weird_sum(a_vector):
     else:
         return a_vector[0] + weird_sum(a_vector[1:])
 
-#def vector_sum(*args):
-    #"""Given any number of vector, returns sum"""
-    #return [
-    #   sum([vector[i] for vector in vectors])
-    #    for i in range(len(vectors[0]))
-    #]
-
-   # summiest_vector.append(first_vector[0]+ second_vector[0] + third_vector[0])
-   # summiest_vector.append(first_vector[1]+ second_vector[1] + third_vector[1])
-   # summiest_vector.append(first_vector[2]+ second_vector[2] + third_vector[2])
 
 def vector_sum(*vectors):
-    return [
-        sum([vector[x] for vector in vectors])
-        for x in range(len(vectors[0]))
-        ]
-
-
-#    """vector_sum can take any number of vectors and add them together.
-#    v = [1, 3, 0]
-#    w = [0, 2, 4]
-#    u = [1, 1, 1]
-#    y = [10, 20, 30]
-#    z = [0, 0, 0]
-#    assert vector_sum(v, w, u, y, z) == [12, 26, 35]"""
-    # [pow(2,x) for x in range(10) if x%2 ==0] # Collection, iteration, separation
-    # take vector[0], add it to the vector[1], creating a summed_vector. then to the summed vector add vector[3]
+    return \
+        [sum([vector[x] for vector in vectors])
+        for x in range(len(vectors[0]))]
 
 
 def vector_sum_checks_shapes():
@@ -111,9 +89,12 @@ def vector_mean():
     pass
 
 
-def magnitude():
-    pass
-
+def magnitude(a_vector):
+    squares = [
+        (a_vector[idx] ** 2) for idx in range(len(a_vector))
+        ]
+    sum_of_squares = sum(squares)
+    return math.sqrt(sum_of_squares)
 
 def shape_matrices(vector_or_matrix):
     return shape(vector_or_matrix)
@@ -131,8 +112,12 @@ def matrix_row(a_matrix, row_index):
 def matrix_col(a_matrix, column_index):
     return [a_vector[column_index] for a_vector in a_matrix]
 
-def matrix_scalar_multiply():
-    pass
+def matrix_scalar_multiply(a_matrix, multiplier):
+    return [
+        [(num * multiplier) for num in a_matrix[x]]
+            for x in range(len(a_matrix))
+        ]
+
 
 
 def matrix_vector_multiply():
