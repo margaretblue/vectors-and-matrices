@@ -58,25 +58,23 @@ def weird_sum(a_vector):
     else:
         return a_vector[0] + weird_sum(a_vector[1:])
 
-def vector_sum(*args):
-    """Given any number of vector, returns sum"""
+#def vector_sum(*args):
+    #"""Given any number of vector, returns sum"""
     #return [
     #   sum([vector[i] for vector in vectors])
     #    for i in range(len(vectors[0]))
     #]
 
-   # summiest_vector = []
    # summiest_vector.append(first_vector[0]+ second_vector[0] + third_vector[0])
    # summiest_vector.append(first_vector[1]+ second_vector[1] + third_vector[1])
    # summiest_vector.append(first_vector[2]+ second_vector[2] + third_vector[2])
-    #index = 0
-    # do something len(args) times
-    summiest_vector = []
-    for x in range(len(args[0])):
-        for arg in args:
-            print("i am sum(args[x]) {}".format(sum(args[x])))
-            summiest_vector.append(sum(args[x]))
-    return summiest_vector
+
+def vector_sum(*vectors):
+    return [
+        sum([vector[x] for vector in vectors])
+        for x in range(len(vectors[0]))
+        ]
+
 
 #    """vector_sum can take any number of vectors and add them together.
 #    v = [1, 3, 0]
@@ -131,8 +129,10 @@ def matrix_row(a_matrix, row_index):
 
 
 def matrix_col(a_matrix, column_index):
+    #TODO: FixThis x of the column index of x in matrix
+    #return [a_matrix[column_index] n for x in len(a_matrix)]
+    
     pass
-
 
 def matrix_scalar_multiply():
     pass
