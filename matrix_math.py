@@ -85,8 +85,10 @@ def vector_multiply(a_vector, multiplier):
     return [(a_vector[x] * multiplier) for x in range(len(a_vector))]
 
 
-def vector_mean():
-    pass
+def vector_mean(*vectors):
+    """Take sum of all vectors and divide that by the number of vectors"""
+    # use the functions you have!
+    return vector_multiply(vector_sum(*vectors), (1/(len(vectors))))
 
 
 def magnitude(a_vector):
@@ -96,7 +98,9 @@ def magnitude(a_vector):
     sum_of_squares = sum(squares)
     return math.sqrt(sum_of_squares)
 
+
 def shape_matrices(vector_or_matrix):
+
     return shape(vector_or_matrix)
 
 
@@ -117,7 +121,6 @@ def matrix_scalar_multiply(a_matrix, multiplier):
         [(num * multiplier) for num in a_matrix[x]]
             for x in range(len(a_matrix))
         ]
-
 
 
 def matrix_vector_multiply():
