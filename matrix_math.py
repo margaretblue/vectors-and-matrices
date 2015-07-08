@@ -129,10 +129,7 @@ def matrix_row(a_matrix, row_index):
 
 
 def matrix_col(a_matrix, column_index):
-    #TODO: FixThis x of the column index of x in matrix
-    #return [a_matrix[column_index] n for x in len(a_matrix)]
-    
-    pass
+    return [a_vector[column_index] for a_vector in a_matrix]
 
 def matrix_scalar_multiply():
     pass
