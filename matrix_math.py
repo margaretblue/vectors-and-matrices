@@ -27,6 +27,8 @@ def vector_add(first_vector, second_vector):
     w = [0, 2, 4]
     vector_add(v, w) == [1, 5, 4]
     """
+    if shape(first_vector) != shape(second_vector):
+        raise ShapeException("Shape error.")
     return [first_vector[x] + second_vector[x] for x in range(len(first_vector))]
     #idx = 0
     #added_vector = []
@@ -38,10 +40,13 @@ def vector_add(first_vector, second_vector):
 
 
 def vector_sub(first_vector, second_vector):
+    if shape(first_vector) != shape(second_vector):
+        raise ShapeException("Shape error.")
     return [first_vector[x] - second_vector[x] for x in range(len(first_vector))]
 
 
 def vector_sub_checks_shapes():
+    #in test_vector_sub_checks_shapes(), it looks like it doesn't need this function and just uses vector_sub()
     pass
 
 def weird_sum(a_vector):
@@ -53,6 +58,11 @@ def weird_sum(a_vector):
 
 
 def vector_sum(*vectors):
+    idx = 0
+    while idx < (len(vectors)-1):
+        if shape(vectors[idx]) != shape(vectors[idx+1]):
+            raise ShapeException("Shape error.")
+        idx += 1
     return \
         [
             sum([vector[x] for vector in vectors])
