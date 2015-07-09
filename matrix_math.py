@@ -5,9 +5,9 @@ import math
 class ShapeException(Exception):
     pass
 
-ShapeException("Wrong shape")
+# raise ShapeException("Wrong shape")
 
-
+##TODO
 def shape(vector_or_matrix):
     """shape takes a vector or matrix and returns a tuple with the
     number of rows (for a vector) or the number of rows and columns
@@ -54,8 +54,10 @@ def weird_sum(a_vector):
 
 def vector_sum(*vectors):
     return \
-        [sum([vector[x] for vector in vectors])
-        for x in range(len(vectors[0]))]
+        [
+            sum([vector[x] for vector in vectors])
+        for x in range(len(vectors[0]))
+        ]
 
 
 def vector_sum_checks_shapes():
@@ -121,8 +123,15 @@ def matrix_scalar_multiply(a_matrix, multiplier):
         ]
 
 
-def matrix_vector_multiply():
-    pass
+def matrix_vector_multiply(a_matrix, a_vector):
+    w = [0] * len(a_matrix)
+    sum = 0
+    for idx in range(len(a_matrix)):
+        for i in range(len(a_vector)):
+            sum += (a_matrix[idx][i]) * a_vector[i]
+        w[idx] = sum
+        sum = 0
+    return w
 
 
 def matrix_vector_multiply_checks_shapes():
