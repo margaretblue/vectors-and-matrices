@@ -86,14 +86,14 @@ def test_dot():
     assert dot(w, y) == 160
     assert dot(m, n) == 15
     assert dot(u, z) == 0
-#
-#
-# @raises(ShapeException)
-# def test_dot_checks_shapes():
-#     """Shape rule: the vectors must be the same size."""
-#     dot(v, m)
-#
-#
+
+
+@raises(ShapeException)
+def test_dot_checks_shapes():
+    """Shape rule: the vectors must be the same size."""
+    dot(v, m)
+
+
 def test_vector_multiply():
     """
     [a b]  *  Z     = [a*Z b*Z]

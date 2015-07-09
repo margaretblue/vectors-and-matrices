@@ -75,6 +75,8 @@ def vector_sum_checks_shapes():
 
 
 def dot(a_vector, b_vector):
+    if shape(a_vector) != shape(b_vector):
+        raise ShapeException("Shape error.")
     multiplied_list = [
         (a_vector[i] * b_vector[i])
         for i in range(len(a_vector))
@@ -92,6 +94,8 @@ def vector_multiply(a_vector, multiplier):
     [a b]  *  Z     = [a*Z b*Z]
     Vector * Scalar = Vector
     """
+    #if type(shape(a_vector)[0]) is not 'int':
+    #    raise ShapeException("Shape error.")
     return [(a_vector[x] * multiplier) for x in range(len(a_vector))]
 
 
